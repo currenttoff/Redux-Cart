@@ -1,0 +1,50 @@
+/*
+Firebase Backend (ct)
+REST API url
+https://console.firebase.google.com/u/1/project/redux-http-71b7a/database/redux-http-71b7a-default-rtdb/data/~2F
+
+modify rules
+{
+  "rules": {
+    ".read": true,  //false to true
+    ".write": true //false to true
+  }
+}
+
+now fetch in componennts like this 
+useEffect(() => {
+    fetch(
+      "https://redux-http-71b7a-default-rtdb.firebaseio.com/cartitems.json",
+      { method: "PUT", body: JSON.stringify(cart) }
+    );
+  }, [cart]);
+
+backend storage in firebase
+https://redux-http-71b7a-default-rtdb.firebaseio.com/
+cartitems
+itemsList
+showCart
+:
+true
+totalQuantity
+:
+2
+
+
+Async Request 
+useEffect(() => {
+    const sendRequest = async () => {
+      const res = await fetch(
+        "https://redux-http-71b7a-default-rtdb.firebaseio.com/cartitems.json",
+        { method: "PUT", body: JSON.stringify(cart) }
+      );
+      const data = await res.json();
+    };
+
+    sendRequest();
+  }, [cart]);
+
+
+
+
+*/
